@@ -42,7 +42,12 @@ const userSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', userSchema)
 
-//Get Books
+//Get Users
 module.exports.getUsers = (callback, limit) => {
   User.find(callback).limit(limit)
+}
+
+// Get a User by its Id
+module.exports.getUSerById = function (id, callback) {
+  User.findById(id, callback)
 }
