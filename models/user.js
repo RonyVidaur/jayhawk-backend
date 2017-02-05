@@ -51,3 +51,8 @@ module.exports.getUsers = (callback, limit) => {
 module.exports.getUSerById = function (id, callback) {
   User.findById(id, callback)
 }
+
+//Add a new user
+module.exports.addUser = function(user, callback) {
+  User.create(user, callback)
+}

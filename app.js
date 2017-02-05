@@ -35,6 +35,16 @@ app.get('/api/users/:_id', (req, res) => {
   })
 })
 
+// add a user
+app.post('/api/users', (req, res) => {
+  const user = req.body
+  User.addUser(user, (error, user) => {
+    if (error) {
+      throw error
+    }
+    res.json(user)
+  })
+})
 
 app.listen(7000)
 console.log('Running jayhawk server on port 7000')
