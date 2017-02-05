@@ -29,15 +29,20 @@ const userSchema = mongoose.Schema({
   career : {
     type : String,
     required : true
-  }
+  },
   followers : {
-    data : [
-    ]
+    type: Array,
+    required: true
   },
   following : {
-    data: [
-
-    ]
+    type: Array,
+    required: true
   }
-
 })
+
+const User = module.exports = mongoose.model('User', userSchema)
+
+//Get Books
+module.exports.getUsers = (callback, limit) => {
+  User.find(callback).limit(limit)
+}
