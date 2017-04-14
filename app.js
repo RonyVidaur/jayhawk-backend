@@ -8,7 +8,7 @@ const Post = require('./models/post')
 const User = require('./models/user')
 
 // connection to mongoose
-mongoose.connect('mongodb://localhost/jayhawk')
+mongoose.connect('mongodb://127.0.0.1/jayhawk')
 const db = mongoose.connection
 
 app.get('/', (req, res) => {
@@ -35,6 +35,7 @@ app.get('/api/users/:_id', (req, res) => {
   })
 })
 
+
 // add a user
 app.post('/api/users', (req, res) => {
   const user = req.body
@@ -46,5 +47,5 @@ app.post('/api/users', (req, res) => {
   })
 })
 
-app.listen(7000)
+app.listen(7770)
 console.log('Running jayhawk server on port 7000')
